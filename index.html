@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        transition: all e;
+      }
+      h1 {
+        margin: 5px 0;
+        text-align: center;
+      }
+      .board {
+        display: grid;
+        padding: 25px 40px;
+        grid-template-columns: repeat(3, auto);
+        gap: 50px;
+        align-items: center;
+
+        border-radius: 1rem;
+        width: 600px;
+        height: 450px;
+        background-color: rgb(176, 210, 211);
+        margin: 30px auto;
+
+        box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      .card {
+        height: 200px;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+      }
+      .flip {
+        transform: rotateY(180deg);
+      }
+      .front,
+      .back {
+        border-radius: 2rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+      }
+      .front{
+        background-color: azure;
+      }
+      .back {
+        background-color: rgb(149, 179, 206);
+        transform: rotateY(180deg);
+        color: white;
+      }
+    </style>
+    <title>Card_Game</title> 
+  </head>
+  <body>
+    <h1>Guess The Card Game</h1>
+    <div class="board" id="board">
+      <div class="card" id ="card1" onclick="flip(this)">
+        <div class="front">⭐</div>
+        <div class="back" id="1">A</div>
+      </div>
+      <div class="card" id ="card2" onclick="flip(this)">
+        <div class="front">⭐</div>
+        <div class="back" id="2"></div>
+      </div>
+      <div class="card" id ="card3" onclick="flip(this)">
+        <div class="front">⭐</div>
+        <div class="back" id="3"></div>
+      </div>
+      <div class="card" id ="card4" onclick="flip(this)">
+        <div class="front">⭐</div>
+        <div class="back" id="4"></div>
+      </div>
+      <div class="card" id ="card5" onclick="flip(this)">
+        <div class="front">⭐</div>
+        <div class="back" id="5"></div>
+      </div>
+      <div class="card" id ="card6" onclick="flip(this)">
+        <div class="front">⭐</div>
+        <div class="back" id="6"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
